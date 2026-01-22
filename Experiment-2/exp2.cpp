@@ -50,7 +50,7 @@ void decode(string en, Node* root, string & ans) {
 
 
 int main(){
-    cout << "Please enter an string to encode in small case\n";
+    cout << "Please enter an string to encode\n";
     string s;
     cin >> s;
     int arr[26] ={0};
@@ -83,17 +83,16 @@ int main(){
     for(auto i: enco){
         cout << i.first << " " << i.second << endl;
     }
-    cout << "Your string is\n";
+    cout << "string is\n";
     cout << s << endl;
     string encoded = "";
-    cout << "Your encoded string is\n";
+    cout << "encoded string \n";
     for(int i= 0 ; i< s.length() ; i++){
         encoded += enco[s[i]];
-        // cout << enco[s[i]];
     }
     cout << encoded << endl;
     string decoded = "";
     decode(encoded , minHeap.top() , decoded);
-    cout << "Your decoded string is\n" << decoded;
+    cout << "decoded string \n" << decoded;
     return 0;
 }
