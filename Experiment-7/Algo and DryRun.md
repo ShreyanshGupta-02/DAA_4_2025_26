@@ -37,22 +37,25 @@ Step 6: After traversal:
 ## Dry Run
 
 Input:
-n = 5  
-flights = [[0,1,200],[0,2,300],[1,3,400],[2,3,100],[3,4,150]]  
-src = 0, dst = 4, k = 2  
+n = 4
+flights = [[0,1,100],[1,2,100],[0,2,500],[2,3,200],[1,3,600]]
+src = 0
+dst = 3
+k = 1
 
 ### Step-by-step Execution:
 
 - Start from city 0  
   Possible paths:
-  - 0 → 1 (cost = 200)
-  - 0 → 2 (cost = 300)
+   -0 → 1  cost = 100
+   -0 → 2  cost = 500
 
 - From city 1:
-  - 1 → 3 (cost = 200 + 400 = 600)
+  - 1 → 2  cost = 100 + 100 = 200
+  - 1 → 3  cost = 100 + 600 = 700
 
 - From city 2:
-  - 2 → 3 (cost = 300 + 100 = 400)
+  - 2 → 3  cost = 500 + 200 = 700
 
 - From city 3:
   - 3 → 4
@@ -60,11 +63,11 @@ src = 0, dst = 4, k = 2
     - From path (0 → 2 → 3): cost = 400 + 150 = 550
 
 ### Valid paths within k = 2 stops:
-- 0 → 1 → 3 → 4 (cost = 750)
-- 0 → 2 → 3 → 4 (cost = 550)
+- 0 → 1 → 3   cost = 700
+- 0 → 2 → 3   cost = 700
 
 ### Final Answer:
-550
+700
 ---
 
 ## Time Complexity
