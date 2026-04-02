@@ -62,7 +62,7 @@ k = 1
     - From path (0 → 1 → 3): cost = 600 + 150 = 750
     - From path (0 → 2 → 3): cost = 400 + 150 = 550
 
-### Valid paths within k = 2 stops:
+### Valid paths within k = 1 stops:
 - 0 → 1 → 3   cost = 700
 - 0 → 2 → 3   cost = 700
 
