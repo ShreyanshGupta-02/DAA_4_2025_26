@@ -116,17 +116,17 @@ Minimum difference = |5 - 5| =**0**
 ```
 1
 4
-1 6 11 5
+3 1 4 2 
 ```
 
 **Output:**
 ```
-1
+0
 ```
 
 **Explanation:**  
-One possible partition is `{1, 5, 6}` (sum = 12) and `{11}` (sum = 11).  
-The difference between sums is **1**.
+One possible partition is `{3,2}` (sum = 5) and `{1,4}` (sum = 5).  
+The difference between sums is **0**.
 
 ---
 
