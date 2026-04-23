@@ -132,4 +132,4 @@ The difference between sums is **0**.
 
 ## Code Accepted Screenshot
 
-![Code Accepted](./output.png)
+![Code Accepted](<img width="1919" height="966" alt="Screenshot 2026-04-23 175545" src="https://github.com/user-attachments/assets/7b48b1c8-f321-4df1-a247-65bd88802667" />)
