@@ -5,23 +5,20 @@ class Solution {
 public:
 int tsp(vector<vector<int>>& cost){
     int n=cost.size();
-    vector<vector<int>> dp(1<<n,vector<int>(n,INT_MAX));
-    dp[1][0]=0;
-    for(int mask=1;mask<(1<<n);mask++){
-        for(int i=0;i<n;i++){
-            if(mask&(1<<i)){
-                for(int j=0;j<n;j++){
-                    if(mask&(1<<j) && i!=j){
-                        dp[mask][i]=min(dp[mask][i],dp[mask^(1<<i)][j]+cost[j][i]);
-                    }
-                }
+    vector<vector<int>> dp(1<<n,vector<int>(n,-1));
+    function<int(int,int)> solve=[&](int mask,int pos){
+        if(mask==(1<<n)-1){
+            return cost[pos][0];
+        }
+        if(dp[mask][pos]!=-1){
+            return dp[mask][pos];
+        }
+        for(int city=0;city<n;city++){
+            if((mask&(1<<city))==0){
+                dp[mask][pos]=min(dp[mask][pos],cost[pos][city]+solve(mask|(1<<city),city));
             }
         }
-    }
-    int ans=INT_MAX;
-    for(int i=0;i<n;i++){
-        ans=min(ans,dp[(1<<n)-1][i]+cost[i][0]);
-    }
-    return ans;
+        return dp[mask][pos];
+    };
 }
 };
