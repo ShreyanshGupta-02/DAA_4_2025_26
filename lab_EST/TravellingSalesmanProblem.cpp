@@ -15,8 +15,8 @@ int tsp(vector<vector<int>>& cost){
         }
         int ans=INT_MAX;
         for(int city=0;city<n;city++){
-            if((mask&(1<<city))==0){
-                ans=min(dp[mask][pos],cost[pos][city]+solve(mask|(1<<city),city));
+            if(!(mask&(1<<city))){
+                ans=min(ans,cost[pos][city]+solve(mask|(1<<city),city));
             }
         }
         return dp[mask][pos]=ans;
